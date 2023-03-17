@@ -10,12 +10,14 @@
 
 </head>
 <body>
+    <?php 
+    getSnippetInfo($_GET["id"])
+    ?>
+
+
     <div class="bigHeader">Click on an element to view its HTML / SCSS / JS</div>
 
 
-<?php 
-    getAllSnippets(); //Retrieve every row in the snippet scheme, then display the image to be clicked on
-?>
 
 
 

@@ -1,0 +1,47 @@
+//-------------------------------COLORS---------------------------------
+
+//-------------------------------COLORS---------------------------------
+
+
+//-------------------------------FONTS---------------------------------
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  }
+  @font-face {
+    font-family: "bold";
+    font-style: normal;
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+  }
+//-------------------------------FONTS---------------------------------
+
+//-------------------------------MULTI PURPOSE CSS---------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .bigHeader {
+    font-family: "bold";
+    font-size: 60px;
+    text-align: center;
+  }
+
+  img{
+    width: 250px;
+    height: 250px;
+  }
+  img:hover{
+    zoom: 1.2;
+    transition: 1.5s ease-in-out;
+  }
+
+//-------------------------------MULTI PURPOSE CSS---------------------------------
+
+
+//-------------------------------IMPORTS---------------------------------
+
+
+//-------------------------------IMPORTS---------------------------------
