@@ -11,11 +11,21 @@
 </head>
 <body>
     <?php 
-    getSnippetInfo($_GET["id"])
+    $snippetData = getSnippetInfo($_GET["id"])         
+    //[0] = NAME
+    //[1] = DESCRIPTION
+    //[2] = HTML
+    //[3] = CSS 
+    //[4] = JS
     ?>
 
+    <div class=productHeader>
+        <h2><?php echo $snippetData[2]?></h2>   
+        <h2><?php echo str_replace(array("\r\n", "\n", "\r"), "<br>", $snippetData[2])?></h2>
+        
+    </div>
 
-    <div class="bigHeader">Click on an element to view its HTML / SCSS / JS</div>
+
 
 
 

@@ -14,7 +14,7 @@
 
 
 <?php 
-    getAllSnippets(); //Retrieve every row in the snippet scheme, then display the image to be clicked on
+    getAllSnippets(); //Retrieve every row in the snippet scheme, then display the image to be clicked
 ?>
 
 
