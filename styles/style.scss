@@ -1,5 +1,17 @@
 //-------------------------------COLORS---------------------------------
+$primaryColor: #fafafa;
+$primaryDark:  #fafafa;
+$primaryLight: #FAFAFA;
 
+$secondaryColor: #131417;
+$secondaryColorDark: #202020;
+$secondaryColorLight: #1E1F26;
+
+$accentColor: #2cddce;
+$accentColorDark: #272021;
+$accentColorLight: #77623b;;
+
+$white:  #FAFAFA;
 //-------------------------------COLORS---------------------------------
 
 
@@ -18,31 +30,34 @@
 
 //-------------------------------MULTI PURPOSE CSS---------------------------------
 
+body{
+  background-color: $secondaryColor;
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
   }
   
-  .bigHeader {
-    font-family: "bold";
-    font-size: 60px;
-    text-align: center;
-  }
 
-  img{
-    width: 250px;
-    height: 250px;
-    padding: 10px 10px;
-  }
-  img:hover{
-    zoom: 1.2;
-    transition: 1.5s ease-in-out;
-  }
+.bigHeader {
+  font-family: "bold";
+  font-size: 60px;
+  text-align: center;
+  color: $primaryColor;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+
 
 //-------------------------------MULTI PURPOSE CSS---------------------------------
 
 
 //-------------------------------IMPORTS---------------------------------
 
-
+@import "_index.scss"
 //-------------------------------IMPORTS---------------------------------

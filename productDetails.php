@@ -20,9 +20,9 @@
     ?>
 
     <div class=productHeader>
-        <h2><?php echo $snippetData[2]?></h2>   
-        <h2><?php echo str_replace(array("\r\n", "\n", "\r"), "<br>", $snippetData[2])?></h2>
-        
+        <h2>'<?php echo $snippetData[2]?>'</h2>   
+   
+     
     </div>
 
 
