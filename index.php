@@ -14,13 +14,23 @@
 
 <?php
     if(!empty($_POST)){ //If a snippet was submitted
-
+        
+        //Can probably past the $_POST variable in itself, but want to keep it simple for now
         $HTMLsnippet = $_POST['snippetHTML'];
         $SCSSsnippet = $_POST['snippetSCSS'];
         $JSsnippet = $_POST['snippetJS'];
-        $snippetImage = $_POST['snippetImage'];
+        $snippetImage = $_FILES['snippetImage']['tmp_name'];
+        $snippetImageName = $_FILES['snippetImage']['name'];
         
-        echo "<h2>$HTMLsnippet</h2>";
+        $snippetDestination = 'images/' . $snippetImageName;
+
+        // echo '1 ' . $HTMLsnippet . ' ';
+  
+        // echo '2 ' .$SCSSsnippet;
+        // echo '3 ' . $JSsnippet;
+        // echo '4 ' .$snippetDestination;
+        file_put_contents($snippetDestination, file_get_contents($snippetImage)); 
+        insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetDestination);
         
     }
 
@@ -30,7 +40,7 @@
 
     <div class="wrapper">
         <div class="inputForm">
-            <form action ="index.php" method="POST">
+            <form action ="index.php" method="POST" enctype="multipart/form-data">
                 <textarea id="HTMLText" name="snippetHTML" placeholder="Enter HTML text here..."></textarea>
                 <textarea id="SCSSText" name="snippetSCSS" placeholder="Enter SCSS text here..."></textarea>
                 <textarea  id="JSText" name="snippetJS" placeholder="Enter JavaScript text here..."></textarea>

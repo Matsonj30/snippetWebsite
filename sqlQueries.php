@@ -1,7 +1,5 @@
 <?php
 
-    
-
     function connectToDB(){
         $servername = "127.0.0.1"; //Hostname
         $username = "root"; //Username
@@ -13,7 +11,7 @@
             die("Connection failed: " . $connect->connect_error);
         }
         else{
-            echo "Connected successfully";
+            // echo "Connected successfully";
             
         }
         echo"<br>";
@@ -41,4 +39,40 @@
         }
         return $row;
     }
+
+
+    function insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetImage){
+        $connection = connectToDB();
+        $query = "INSERT INTO snippets (snippetDescription, snippetHTML, snippetCSS, snippetJS, imagePath)
+        VALUES ('hi', '$HTMLsnippet', '$SCSSsnippet', '$JSsnippet', '$snippetImage')";
+
+        // echo $query;
+        // echo '<br>';
+        // echo $HTMLsnippet;
+        // echo '<br>';
+        // echo '$SCSSsnippet';
+        // echo '<br>';
+        // echo '$JSsnippet';
+        // echo '<br>';
+        // echo '$snippetImage';
+  
+       
+        if($queryConfirm = $connection->query($query)){
+
+        }
+        else{
+            echo "SOMETHING WENT WRONG";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 ?>
