@@ -40,7 +40,9 @@
 
     <div class="wrapper">
         <div class="inputForm">
+          
             <form action ="index.php" method="POST" enctype="multipart/form-data">
+                <h2>Add New Snippet</h2>
                 <textarea id="HTMLText" name="snippetHTML" placeholder="Enter HTML text here..."></textarea>
                 <textarea id="SCSSText" name="snippetSCSS" placeholder="Enter SCSS text here..."></textarea>
                 <textarea  id="JSText" name="snippetJS" placeholder="Enter JavaScript text here..."></textarea>

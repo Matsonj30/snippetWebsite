@@ -19,16 +19,28 @@
     //[4] = JS
     ?>
 
-    <div class=productHeader>
-        <h2>'<?php echo $snippetData[2]?>'</h2>   
-   
-     
+    <div class="bigHeader">Copy the HTML, SCSS, and JS below to make the snippet</div>
+
+
+
+    <div class=codeSection>
+        <div class=section>
+            <h3>HTML</h3>
+            <textarea><?php echo htmlentities($snippetData[2])  ?></textarea>
+        </div>
+        <div class="section small">
+            <h3>SCSS</h3>
+            <textarea><?php echo htmlentities($snippetData[3])  ?></textarea>
+        </div>
+        <div class="section small">
+            <h3>JavaScript</h3>
+            <textarea><?php echo htmlentities($snippetData[4])  ?></textarea>
+        </div>
     </div>
 
-
-
-
-
+    <div class=wrapper>
+    <a href=index.php><button>HOME</button></a>
+    </div>
 
 
 </body>

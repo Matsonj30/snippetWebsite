@@ -1,5 +1,7 @@
 .inputForm{
     form{
+
+        
         background-color: $secondaryColorLight;
         display: flex;
         flex-direction: column;
@@ -8,6 +10,10 @@
         width: 1000px;
         height: 500px;
         border-radius: 20px;
+  
+        h2{
+            color: $primaryColor;
+        }
         textarea{
             height: 100px;
             width: 90%;
@@ -30,7 +36,7 @@
 
 
 img{
-    width: 250px;
+    width: auto;
     height: 250px;
     padding: 10px 10px;
     transition: 1.5s;
