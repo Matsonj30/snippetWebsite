@@ -54,15 +54,23 @@ body{
   justify-content: center;
 }
 
-button{
-  width: 150px;
+.mainButton{
+  width: 120px;
   height:50px;
-  background-color: transparent;
-  border: 2px solid $primaryColor;
-  font-size: 25px;
+  background-color: rgb(25, 164, 219);
+  border: 0px;
+  font-size: 20px;
   color: $primaryColor;
   margin: 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+
 }
+button:hover{
+  opacity: 0.9;
+}
+
+
 //-------------------------------MULTI PURPOSE CSS---------------------------------
 
 

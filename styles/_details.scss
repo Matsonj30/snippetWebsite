@@ -9,7 +9,7 @@
         margin: 10px 10px;
         border: 2px solid $primaryColor;
         border-radius: 10px;
-    
+        padding: 10px 10px;
         color: $white;
         textarea{
             width: 100%;
@@ -28,9 +28,17 @@
         }
     }
     .small{
-        width: 740px;
+        width: 730px;
     }
 
 
 }
 
+
+.buttonRed{
+    @extend .mainButton;
+    background-color: rgb(221, 34, 34);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }

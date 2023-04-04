@@ -32,7 +32,7 @@
 
     function getSnippetInfo($snippetID){
         $connection = connectToDB();
-        $query = "SELECT snippetName, snippetDescription, snippetHTML, snippetCSS, snippetJS FROM snippets WHERE snippetid=$snippetID;";
+        $query = "SELECT snippetName, snippetType, snippetHTML, snippetCSS, snippetJS FROM snippets WHERE snippetid=$snippetID;";
         if($results = $connection->query($query)){
 
             $row = mysqli_fetch_array($results);
@@ -41,22 +41,11 @@
     }
 
 
-    function insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetImage){
+    function insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetImage, $snippetType){
         $connection = connectToDB();
-        $query = "INSERT INTO snippets (snippetDescription, snippetHTML, snippetCSS, snippetJS, imagePath)
-        VALUES ('hi', '$HTMLsnippet', '$SCSSsnippet', '$JSsnippet', '$snippetImage')";
-
-        // echo $query;
-        // echo '<br>';
-        // echo $HTMLsnippet;
-        // echo '<br>';
-        // echo '$SCSSsnippet';
-        // echo '<br>';
-        // echo '$JSsnippet';
-        // echo '<br>';
-        // echo '$snippetImage';
+        $query = "INSERT INTO snippets (snippetType, snippetHTML, snippetCSS, snippetJS, imagePath)
+        VALUES ('$snippetType', '$HTMLsnippet', '$SCSSsnippet', '$JSsnippet', '$snippetImage')";
   
-       
         if($queryConfirm = $connection->query($query)){
 
         }

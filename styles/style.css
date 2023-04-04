@@ -30,14 +30,24 @@ body {
   justify-content: center;
 }
 
-button {
-  width: 150px;
+.mainButton, .buttonRed {
+  width: 120px;
   height: 50px;
-  background-color: transparent;
-  border: 2px solid #fafafa;
-  font-size: 25px;
+  background-color: rgb(25, 164, 219);
+  border: 0px;
+  font-size: 20px;
   color: #fafafa;
   margin: 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.buttonRed {
+  background-color: rgb(221, 34, 34);
 }
 
 .inputForm form {
@@ -47,7 +57,7 @@ button {
   align-items: center;
   justify-content: center;
   width: 1000px;
-  height: 500px;
+  height: 600px;
   border-radius: 20px;
 }
 .inputForm form h2 {
@@ -93,6 +103,7 @@ img:hover {
   margin: 10px 10px;
   border: 2px solid #fafafa;
   border-radius: 10px;
+  padding: 10px 10px;
   color: #FAFAFA;
 }
 .codeSection .section textarea {
@@ -110,5 +121,12 @@ img:hover {
   font-weight: 100;
 }
 .codeSection .small {
-  width: 740px;
+  width: 730px;
+}
+
+.buttonRed {
+  background-color: rgb(221, 34, 34);
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }/*# sourceMappingURL=style.css.map */

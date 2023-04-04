@@ -20,17 +20,26 @@
         $SCSSsnippet = $_POST['snippetSCSS'];
         $JSsnippet = $_POST['snippetJS'];
         $snippetImage = $_FILES['snippetImage']['tmp_name'];
-        $snippetImageName = $_FILES['snippetImage']['name'];
-        
-        $snippetDestination = 'images/' . $snippetImageName;
 
+        $snippetType = $_POST['typeOfSnippet'];
+
+        $snippetImageName = $_FILES['snippetImage']['name'];
+        $snippetDestination = 'images/' . $snippetImageName;
+        
+        $dataArray = [
+            "HTML" => $HTMLsnippet,
+            "SCSS" => $SCSSsnippet,
+            "JS" => $SCSSsnippet,
+            "PATH" => $snippetDestination,
+            "TYPE" => $snippetType
+        ];
         // echo '1 ' . $HTMLsnippet . ' ';
   
         // echo '2 ' .$SCSSsnippet;
         // echo '3 ' . $JSsnippet;
         // echo '4 ' .$snippetDestination;
         file_put_contents($snippetDestination, file_get_contents($snippetImage)); 
-        insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetDestination);
+        insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetDestination, $snippetType);
         
     }
 
@@ -46,10 +55,23 @@
                 <textarea id="HTMLText" name="snippetHTML" placeholder="Enter HTML text here..."></textarea>
                 <textarea id="SCSSText" name="snippetSCSS" placeholder="Enter SCSS text here..."></textarea>
                 <textarea  id="JSText" name="snippetJS" placeholder="Enter JavaScript text here..."></textarea>
+                <label for="type">What category is this snippet</label>
+                <select id="type" name="typeOfSnippet">
+                    <option value = "Hero">Hero</option>
+                    <option value = "NavigationBar">Navigation Bar</option>
+                    <option value = "Button">Button</option>
+                    <option value = "Footer">Footer</option>
+                    <option value = "Informational">Informational</option>
+                    <option value = "Services">Services</option>
+                    <option value = "Gallery">Gallery</option>
+                    <option value = "Contact">Contact</option>
+                    <option value = "Testimonial">Testimonial</option>
+                    <option value = "Other">Other</option>
+                </select>
                 <label for="snippetImage">
                   <input type="file" id="snippetImage" name="snippetImage" >
                 </label>
-                <button type="submit">Submit</button>
+                <button class=mainButton type="submit">Submit</button>
             </form>
         </div>
     </div>

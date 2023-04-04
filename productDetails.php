@@ -18,7 +18,7 @@
     //[3] = CSS 
     //[4] = JS
     ?>
-
+    <button class=buttonRed>Delete</button>
     <div class="bigHeader">Copy the HTML, SCSS, and JS below to make the snippet</div>
 
 
@@ -39,7 +39,7 @@
     </div>
 
     <div class=wrapper>
-    <a href=index.php><button>HOME</button></a>
+    <a href=index.php><button class=mainButton>Home</button></a>
     </div>
 
 
