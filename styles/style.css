@@ -46,10 +46,6 @@ button:hover {
   opacity: 0.9;
 }
 
-.buttonRed {
-  background-color: rgb(221, 34, 34);
-}
-
 .inputForm form {
   background-color: #1E1F26;
   display: flex;
@@ -124,9 +120,11 @@ img:hover {
   width: 730px;
 }
 
+.deleteButton {
+  position: absolute;
+  right: 0;
+}
+
 .buttonRed {
   background-color: rgb(221, 34, 34);
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }/*# sourceMappingURL=style.css.map */

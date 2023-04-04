@@ -11,14 +11,19 @@
 </head>
 <body>
     <?php 
-    $snippetData = getSnippetInfo($_GET["id"])         
+    $id = $_GET["id"];
+    $snippetData = getSnippetInfo($id)         
     //[0] = NAME
     //[1] = DESCRIPTION
     //[2] = HTML
     //[3] = CSS 
     //[4] = JS
     ?>
-    <button class=buttonRed>Delete</button>
+    <form class=deleteButton action="sqlQueries.php?action=deleteSnippet&id=<?php echo $id ?>" method="post" >
+        <button class=buttonRed type=submit >Delete</button>
+    </form>
+    <br>
+    <br>
     <div class="bigHeader">Copy the HTML, SCSS, and JS below to make the snippet</div>
 
 

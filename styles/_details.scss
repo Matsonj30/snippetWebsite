@@ -35,10 +35,13 @@
 }
 
 
+.deleteButton{
+    position: absolute;
+    right: 0;
+}
+
 .buttonRed{
     @extend .mainButton;
     background-color: rgb(221, 34, 34);
-    position: absolute;
-    bottom: 0;
-    right: 0;
+
   }

@@ -11,46 +11,13 @@
 
 </head>
 
-
-<?php
-    if(!empty($_POST)){ //If a snippet was submitted
-        
-        //Can probably past the $_POST variable in itself, but want to keep it simple for now
-        $HTMLsnippet = $_POST['snippetHTML'];
-        $SCSSsnippet = $_POST['snippetSCSS'];
-        $JSsnippet = $_POST['snippetJS'];
-        $snippetImage = $_FILES['snippetImage']['tmp_name'];
-
-        $snippetType = $_POST['typeOfSnippet'];
-
-        $snippetImageName = $_FILES['snippetImage']['name'];
-        $snippetDestination = 'images/' . $snippetImageName;
-        
-        $dataArray = [
-            "HTML" => $HTMLsnippet,
-            "SCSS" => $SCSSsnippet,
-            "JS" => $SCSSsnippet,
-            "PATH" => $snippetDestination,
-            "TYPE" => $snippetType
-        ];
-        // echo '1 ' . $HTMLsnippet . ' ';
-  
-        // echo '2 ' .$SCSSsnippet;
-        // echo '3 ' . $JSsnippet;
-        // echo '4 ' .$snippetDestination;
-        file_put_contents($snippetDestination, file_get_contents($snippetImage)); 
-        insertNewSnippet($HTMLsnippet, $SCSSsnippet, $JSsnippet, $snippetDestination, $snippetType);
-        
-    }
-
-?>
 <body>
     <div class="bigHeader">Click on an element to view its HTML / SCSS / JS</div>
 
     <div class="wrapper">
         <div class="inputForm">
           
-            <form action ="index.php" method="POST" enctype="multipart/form-data">
+            <form action ="sqlQueries.php?action=insertNewSnippet" method="POST" enctype="multipart/form-data" >
                 <h2>Add New Snippet</h2>
                 <textarea id="HTMLText" name="snippetHTML" placeholder="Enter HTML text here..."></textarea>
                 <textarea id="SCSSText" name="snippetSCSS" placeholder="Enter SCSS text here..."></textarea>
