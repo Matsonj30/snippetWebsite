@@ -19,6 +19,8 @@
     //[3] = CSS 
     //[4] = JS
     ?>
+
+    
     <form class=deleteButton action="sqlQueries.php?action=deleteSnippet&id=<?php echo $id ?>" method="post" >
         <button class=buttonRed type=submit >Delete</button>
     </form>

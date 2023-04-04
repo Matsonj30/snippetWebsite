@@ -7,19 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HU</h1>
+ 
 </body>
 </html>
 
 <?php
-    $var = $_GET['action'];
 
-    if(!empty($_POST)){ //if there is something posted
-        if($_GET['action'] == "insertNewSnippet"){
-
+    echo $_GET['action'];
+    switch($_GET['action']){
+        case "insertNewSnippet":
             insertNewSnippet($_POST);
-        }
+        case "deleteSnippet":
+            deleteSnippet($_GET['id']);
+        default:
+            echo "No function called.";
     }
+
+
     function connectToDB(){
         $servername = "127.0.0.1"; //Hostname
         $username = "root"; //Username
@@ -73,7 +77,7 @@
         $snippetImageName = $_FILES['snippetImage']['name'];
         //Where we want image to be stored
         $snippetDestination = 'images/' . $snippetImageName;
-        //
+        //Save our image contents to a local file, then store path into sql server to save space
         file_put_contents($snippetDestination, file_get_contents($snippetImage)); 
 
         $connection = connectToDB();
@@ -91,9 +95,18 @@
 
 
 
-    function deleteSnippet(){
-        $id = $_GET["id"];
-        echo $id;
+    function deleteSnippet($id){
+        echo "<H1>I</H1>";
+       $connection = connectToDB();
+       $query = "DELETE FROM snippets WHERE snippetID = $id;";
+
+       if($queryConfirm = $connection->query($query)){
+            header("Location: index.php");
+            exit;
+        }
+        else{
+            echo "SOMETHING WENT WRONG";
+        }
     }
 
 
