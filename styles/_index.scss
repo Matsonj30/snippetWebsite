@@ -1,4 +1,5 @@
-.inputForm{
+#inputForm{
+    display: none;
     form{
 
         
@@ -27,17 +28,21 @@
             border: 3px solid $accentColor;
       
         }
-        #snippetImage{
-            color: $primaryColor;
-            cursor: pointer;
-        }
+  
     }
 }
 
 
+.snippetsGrid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+}
 img{
     width: auto;
-    height: 250px;
+    height: 150px;
     padding: 10px 10px;
     transition: 1.5s;
 }

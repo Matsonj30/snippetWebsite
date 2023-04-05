@@ -12,10 +12,14 @@
 </head>
 
 <body>
+
     <div class="bigHeader">Click on an element to view its HTML / SCSS / JS</div>
+    <div class=wrapper>
+        <button class=mainButton onclick="showForm()">Submit Snippet</button>
+    </div>
 
     <div class="wrapper">
-        <div class="inputForm">
+        <div id="inputForm">
           
             <form action ="sqlQueries.php?action=insertNewSnippet" method="POST" enctype="multipart/form-data" >
                 <h2>Add New Snippet</h2>
@@ -43,10 +47,14 @@
         </div>
     </div>
 
+<div class=snippetsGrid>
+
+
 <?php 
     getAllSnippets(); //Retrieve every row in the snippet scheme, then display the image to be clicked
 ?>
 
+</div>
 
 
 </body>

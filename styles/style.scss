@@ -55,11 +55,12 @@ body{
 }
 
 .mainButton{
-  width: 120px;
-  height:50px;
+  width: fit-content;
+  height:fit-content;
   background-color: rgb(25, 164, 219);
   border: 0px;
   font-size: 20px;
+  padding: 10px 30px;
   color: $primaryColor;
   margin: 10px 10px;
   border-radius: 30px;
@@ -78,4 +79,5 @@ button:hover{
 
 @import "_index.scss";
 @import "_details.scss";
+@import "_testStyle.scss";
 //-------------------------------IMPORTS---------------------------------

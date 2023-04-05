@@ -31,11 +31,14 @@ body {
 }
 
 .mainButton, .buttonRed {
-  width: 120px;
-  height: 50px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: rgb(25, 164, 219);
   border: 0px;
   font-size: 20px;
+  padding: 10px 30px;
   color: #fafafa;
   margin: 10px 10px;
   border-radius: 30px;
@@ -46,7 +49,10 @@ button:hover {
   opacity: 0.9;
 }
 
-.inputForm form {
+#inputForm {
+  display: none;
+}
+#inputForm form {
   background-color: #1E1F26;
   display: flex;
   flex-direction: column;
@@ -56,10 +62,10 @@ button:hover {
   height: 600px;
   border-radius: 20px;
 }
-.inputForm form h2 {
+#inputForm form h2 {
   color: #fafafa;
 }
-.inputForm form textarea {
+#inputForm form textarea {
   height: 100px;
   width: 90%;
   border-radius: 20px;
@@ -67,18 +73,22 @@ button:hover {
   resize: none;
   margin: 10px 0px;
 }
-.inputForm form textarea:focus {
+#inputForm form textarea:focus {
   outline: none !important;
   border: 3px solid #2cddce;
 }
-.inputForm form #snippetImage {
-  color: #fafafa;
-  cursor: pointer;
+
+.snippetsGrid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 img {
   width: auto;
-  height: 250px;
+  height: 150px;
   padding: 10px 10px;
   transition: 1.5s;
 }
@@ -127,4 +137,51 @@ img:hover {
 
 .buttonRed {
   background-color: rgb(221, 34, 34);
+}
+
+.servicesList .section {
+  padding: 20px 10px;
+  max-width: 800px;
+}
+.servicesList .section .content .service {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid white;
+  margin-bottom: 15px;
+}
+.servicesList .section .content .service b {
+  color: #2cddce;
+  font-family: "bold";
+}
+
+@media (min-width: 850px) {
+  .servicesList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .servicesList .section {
+    max-width: unset;
+    width: 600px;
+    padding: 30px 50px;
+  }
+  .servicesList .section .titleSection {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .servicesList .section .content .service {
+    font-size: 18px;
+  }
+  .servicesList .pricing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .servicesList .pricing .content p {
+    width: 600px;
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=style.css.map */

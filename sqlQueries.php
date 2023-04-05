@@ -12,8 +12,6 @@
 </html>
 
 <?php
-
-    echo $_GET['action'];
     switch($_GET['action']){
         case "insertNewSnippet":
             insertNewSnippet($_POST);
@@ -80,7 +78,12 @@
         //Save our image contents to a local file, then store path into sql server to save space
         file_put_contents($snippetDestination, file_get_contents($snippetImage)); 
 
+
+
         $connection = connectToDB();
+        $JSsnippet = $connection->real_escape_string($JSsnippet);
+        $HTMLsnippet = $connection->real_escape_string($HTMLsnippet);
+        $SCSSsnippet = $connection->real_escape_string($SCSSsnippet);
         $query = "INSERT INTO snippets (snippetType, snippetHTML, snippetCSS, snippetJS, imagePath)
         VALUES ('$snippetType', '$HTMLsnippet', '$SCSSsnippet', '$JSsnippet', '$snippetDestination')";
   
