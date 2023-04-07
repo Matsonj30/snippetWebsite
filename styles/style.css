@@ -139,49 +139,97 @@ img:hover {
   background-color: rgb(221, 34, 34);
 }
 
-.servicesList .section {
-  padding: 20px 10px;
-  max-width: 800px;
-}
-.servicesList .section .content .service {
+.paginator {
+  margin-top: 100px;
+  width: 100%;
+  padding: 50px 0px;
+  background-color: gray;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid white;
-  margin-bottom: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.servicesList .section .content .service b {
-  color: #2cddce;
-  font-family: "bold";
+.paginator .fa {
+  color: #fafafa;
+  font-size: 40px;
+}
+.paginator .fa-quote-left {
+  margin-bottom: 30px;
+}
+.paginator .arrow {
+  display: none;
+}
+.paginator .testimonialContainer {
+  display: flex;
+  align-items: center;
+}
+.paginator .scrollContainer::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+.paginator .scrollContainer {
+  width: 320px;
+  background-color: rgb(95, 95, 95);
+  padding: 10px 0px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.paginator .scrollContainer .testimonial {
+  width: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginator .scrollContainer .testimonial p {
+  width: 100%;
+  text-align: center;
+  padding: 0px 3px;
+  line-height: 25px;
+  font-size: 14px;
+}
+.paginator .scrollContainer .testimonial b {
+  padding-top: 5px;
+  max-width: 850px;
+  display: block;
+}
+.paginator .circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.paginator .circles span {
+  display: block;
+  background-color: #bebebe;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0px 2px;
+}
+.paginator .circles #circle1 {
+  background-color: #fafafa;
 }
 
-@media (min-width: 850px) {
-  .servicesList {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+@media (min-width: 415px) {
+  .paginator .testimonialContainer .scrollContainer {
+    width: unset;
+    max-width: 850px;
   }
-  .servicesList .section {
-    max-width: unset;
-    width: 600px;
-    padding: 30px 50px;
+  .paginator .testimonialContainer .scrollContainer .testimonial p {
+    font-size: 16px;
+    max-width: 850px;
+    padding: 0px 10px;
   }
-  .servicesList .section .titleSection {
-    width: 100%;
-    text-align: center;
-    padding-bottom: 20px;
+}
+@media (min-width: 900px) {
+  .paginator .fa {
+    display: inline;
   }
-  .servicesList .section .content .service {
-    font-size: 18px;
-  }
-  .servicesList .pricing {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .servicesList .pricing .content p {
-    width: 600px;
-    font-size: 18px;
+  .paginator .testimonialContainer .scrollContainer {
+    margin: 0px 50px;
   }
 }/*# sourceMappingURL=style.css.map */
