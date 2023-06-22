@@ -34,7 +34,7 @@
             die("Connection failed: " . $connect->connect_error);
         }
         else{
-            echo "Connected successfully";
+           
             
     }
         echo"<br>";
