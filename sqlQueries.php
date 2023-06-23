@@ -16,10 +16,12 @@
     switch($_GET['action']){
         case "insertNewSnippet":
             insertNewSnippet($_POST);
+            break;
         case "deleteSnippet":
             deleteSnippet($_GET['id']);
+            break;
         default:
-            echo "No function called.";
+            break;
     }
 
 
