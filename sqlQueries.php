@@ -39,7 +39,6 @@
            
             
     }
-        echo"<br>";
         return $connect;
     }
 
@@ -67,7 +66,6 @@
     }
 
     function insertNewSnippet($post_data){
-        //GET DATA
         $snippetType = $_POST['typeOfSnippet'];
         $HTMLsnippet = $_POST['snippetHTML'];
         $SCSSsnippet = $_POST['snippetSCSS'];
@@ -92,12 +90,13 @@
         VALUES ('$snippetType', '$HTMLsnippet', '$SCSSsnippet', '$JSsnippet', '$snippetDestination')";
   
         if($connection->query($query) != false){
-            header("Location: index.php");
+            echo '<script>window.location.href = "index.php";</script>';
             exit;
         }
         else{
             echo "Error: " . mysqli_errno($connection) . " - " . mysqli_error($connection);
         }
+
     }
 
 
@@ -107,7 +106,7 @@
        $query = "DELETE FROM snippets WHERE snippetID = $id;";
 
        if($connection->query($query) != false){
-            header("Location: index.php");
+            echo '<script>window.location.href = "index.php";</script>';
             exit;
         }
         else{

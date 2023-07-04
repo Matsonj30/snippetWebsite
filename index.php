@@ -12,12 +12,10 @@
 </head>
 
 <body>
-
     <div class="bigHeader">Click on an element to view its HTML / SCSS / JS</div>
     <div class=wrapper>
         <button class=mainButton onclick="showForm()">Submit Snippet</button>
     </div>
-
     <div class="wrapper">
         <div id="inputForm">
           
